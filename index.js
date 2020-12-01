@@ -1,14 +1,15 @@
-const URL = 'http://localhost:3000/tracks'
+const newURL = 'http://localhost:3000/tracks'
 
 document.addEventListener('DOMContentLoaded', () => {
     getTracks()
 
-
+    const stopButton = document.getElementById('stop'); 
+    stopButton.disabled = true;
 })
 
 
 function getTracks(){
-    fetch(URL)
+    fetch(newURL)
         .then(response => response.json())
         .then(tracks => tracks.forEach(track =>renderTrack(track)))
 }
