@@ -17,7 +17,7 @@ function getTracks(){
 function renderTrack(track){
 let trackTable=document.getElementById('list-of-tracks')
 
-let newTrack= document.createElement('tr')
+let newTrack= document.createElement('li')
     newTrack.id = track.id 
     
     trackLink = track.link
@@ -25,6 +25,8 @@ let newTrack= document.createElement('tr')
     console.log(trackLink)
     newTrack.addEventListener('click', event => {
         console.log("hey")
+        clearHeaderContent()
+        trackIsClicked(event,track)
      })
     
 console.log(newTrack)
@@ -32,3 +34,31 @@ console.log(newTrack)
 trackTable.append(newTrack)
 
 }
+
+
+
+function clearHeaderContent() { 
+    document.getElementById('clear').innerHTML = ""; 
+}
+
+function trackIsClicked(event, track){
+    console.log(track.id)
+
+    let clickedTrackArea=document.getElementById('clear')
+    
+    let clickedTrack= document.createElement('p')
+    clickedTrack.id = track.id 
+    
+    trackLink = track.link
+    clickedTrack.innerText = trackLink
+
+    clickedTrackArea.append(clickedTrack)
+
+    } 
+    // 
+
+    // let trackFrame = getElementById('header')
+    // trackFrame.delete
+
+
+
