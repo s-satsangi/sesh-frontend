@@ -13,12 +13,18 @@
 <body>
 
 <header id='clear'>
-    <h1>Record A Track</h1>
-    <p>Talk for 3 seconds, then you will hear your recording played back</p>
-    <script src="recording.js"></script>
-    <button id="action" onclick="handleAction()">Start recording...</button>
-    <button id="stop" onclick="stopRecording()">Stop recording...</button>
-</header>
+    
+    <section class = "recording-deck">
+      <canvas class = "visualizer" height ="80px"></canvas>
+    </section>
+    <div class = "controls">
+      <button class='record'>Start Sesh</button>
+      <button class='stop'>Stop Sesh</button>
+    </div>
+
+    <section class='track-1' class='loaded-track'><audio src=""></audio><p></p></section>
+    <section class='track-2' class='loaded-track'></section>
+  </header>
 
 <section>
   <nav>
@@ -37,23 +43,25 @@
 <footer>
   <p>Made by cool peeps</p>
 </footer>
-
+<!-- sourcing the recordingSesh here so I don't have to worry about the domcontentloaded event -->
+<script src = "recordingSesh.js"></script>
 </body>
 </html>
 
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src='index.js'></script>
-    <link rel="stylesheet" href="index.css">
-    <title>Document</title>
-</head>
-<body>
-    <p>Hey</p>
-
-    <div class="margin flex">
+<!-- saw this stuff commented out, keeping this here till I'm sure we don't need it
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src='index.js'></script>
+      <link rel="stylesheet" href="index.css">
+      <title>Document</title>
+    </head>
+    <body>
+      <p>Hey</p>
+      
+      <div class="margin flex">
         <h4 class='center'>List of Tracks</h4>
         <table id='list-of-tracks'class='margin' border="1">
           <thead class='blue'>
@@ -64,19 +72,19 @@
         </table>
       </div>
     </div>
-
-
-
+    
+    
+    
     <div>
-
-        <h1>Record A Track</h1>
-        <p>Talk for 3 seconds, then you will hear your recording played back</p>
-        <!-- <script src="recording.js"></script> -->
-        <script src="mdnRecordingDemo.js"></script>
-        <button id="action" onclick="handleAction()">Start recording...</button>
-        <button id="stop" onclick="stopRecording()">Stop recording...</button>
-
-    </div>
-
-</body>
-</html> -->
+      
+      <h1>Record A Track</h1>
+      <p>Talk for 3 seconds, then you will hear your recording played back</p> 
+      <script src="recording.js"></script>
+      <script src="mdnRecordingDemo.js"></script>
+      <button id="action" onclick="handleAction()">Start recording...</button>
+      <button id="stop" onclick="stopRecording()">Stop recording...</button>
+      
+      </div>
+      
+      </body>
+      </html> -->
