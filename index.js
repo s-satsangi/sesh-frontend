@@ -1,19 +1,19 @@
+//stuff we're gonna need globally
 const newURL = 'http://localhost:3000/tracks'
 
+//when we first load the page:
 document.addEventListener('DOMContentLoaded', () => {
     getTracks()
-
-    const stopButton = document.getElementById('stop'); 
-    stopButton.disabled = true;
 })
 
-
+//get all recorded tracks on server
 function getTracks(){
     fetch(newURL)
         .then(response => response.json())
         .then(tracks => tracks.forEach(track =>renderTrack(track)))
 }
 
+//Add the infor for a single track to the track list
 function renderTrack(track){
 let trackTable=document.getElementById('list-of-tracks')
 
@@ -36,23 +36,29 @@ trackTable.append(newTrack)
 }
 
 
-
+//currently clears what's in track-1
 function clearHeaderContent() { 
-    document.getElementById('clear').innerHTML = ""; 
+    // debugger
+    // document.getElementsByClassName('track-1').innerHTML = ""; 
+    document.getElementsByClassName('track-1')[0].childNodes[0].src=""
+
+    document.getElementsByClassName('track-1')[0].childNodes[1].value=""
 }
 
+//currently, when track is clicked in the list, renders it in track-1
 function trackIsClicked(event, track){
     console.log(track.id)
-
-    let clickedTrackArea=document.getElementById('clear')
-    
-    let clickedTrack= document.createElement('p')
-    clickedTrack.id = track.id 
-    
+    let clickedTrackArea=document.getElementsByClassName('track-1')
+    let clickedTrackTitleTag= clickedTrackArea[0].childNodes[1]
+    let clickedTrackAudio = clickedTrackArea[0].childNodes[0]
+    clickedTrackAudio.src = track.bucket_link["url"]
+    clickedTrackAudio.controls = true
+    clickedTrackTitleTag.id = track.id 
+    // debugger
     trackLink = track.link
-    clickedTrack.innerText = trackLink
+    clickedTrackTitleTag.innerText = trackLink
 
-    clickedTrackArea.append(clickedTrack)
+    //clickedTrackArea.append(clickedTrack)
 
     } 
     // 

@@ -2,7 +2,7 @@
 // thanks in huge part to https://github.com/mdn/web-dictaphone
 
 // set up some stuff we're gonna use below
-const seshHomeURL = "http://localhost:3000"
+//const seshHomeURL = "http://localhost:3000"
 const recordingDeck = document.querySelector('.recording-deck')
 const canvas = document.querySelector('.visualizer')
 const record = document.querySelector('.record')
@@ -66,8 +66,8 @@ if (navigator.mediaDevices.getUserMedia) {
             const postObj = {}
             postObj.method = "POST"
             postObj.body = formData
-
-            fetch(`${seshHomeURL}/tracks`, postObj)
+            //newURL is from index.js
+            fetch(`${newURL}`, postObj)
         })
 
         mediaRecorder.addEventListener('dataavailable', stream => {
