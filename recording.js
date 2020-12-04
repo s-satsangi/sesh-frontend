@@ -45,6 +45,7 @@ const stopRecording = async () => {
   //const recorder = await recordAudio();
   const audio = await recorder.stop();
   audio.play();
+  console.log(audio);
   //await sleep(8000);
   const actionButton = document.getElementById('action'); 
   actionButton.disabled = false;
