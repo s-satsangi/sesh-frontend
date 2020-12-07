@@ -2,57 +2,60 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<title>CSS Template</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="index.css">
-<script src='index.js'></script>
-
-</head>
-<body>
-
-<header id='clear'>
+  <head>
+    <title>CSS Template</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="index.css">
+    <script src='index.js'></script>
     
-    <section class = "recording-deck">
-      <canvas class = "visualizer" height ="80px"></canvas>
+  </head>
+  <body>
+    
+    <header id='clear'>
+      
+      <section class = "recording-deck">
+        <canvas class = "visualizer" height ="80px"></canvas>
+      </section>
+      <div class = "controls">
+        <button class='record'>Start Sesh</button>
+        <button class='stop'>Stop Sesh</button>
+      </div>
+      
+      <section class='track-1' class='loaded-track'><div><audio src=""></audio></div><div><p></p></div></section>
+      <button class="record"><div>⬤</div><div>Record</div></button>
+      <button class="record-with-track-1"><div>⬤/▶</div><div>Record while Track 1 Plays</div></button>
+      <button class="record-with-track-2"><div>▶/⬤</div><div>Record while Track 2 Plays</div></button>
+      <button class="play-all"><div>▶</div><div>All Tracks</div></button>
+      <button class='swap-tracks'><div><b>🠕🠗</b></div><div>swap tracks</div></button>
+      <button class='make-song'><div>✔</div><div>It's a song!</div></button>
+      <section class='track-2' class='loaded-track'><div><audio src=""></audio></div><div><p></p></div></section>
+    </header>
+    
+    <section>
+      <nav>
+        <h1>See Other Tracks</h1>
+        <ul id="list-of-tracks">
+          
+        </ul>
+      </nav>
+      
+      <article>
+        <h1>See Other Songs</h1>
+        <ul id="list-of-songs">
+          
+        </ul>
+      </article>
     </section>
-    <div class = "controls">
-      <button class='record'>Start Sesh</button>
-      <button class='stop'>Stop Sesh</button>
-    </div>
-
-    <section class='track-1' class='loaded-track'><div><audio src=""></audio></div><div><p></p></div></section>
-    <button class="record"><div>⬤</div><div>Record</div></button>
-    <button class="record-with-track-1"><div>⬤/▶</div><div>Record while Track 1 Plays</div></button>
-    <button class="record-with-track-2"><div>▶/⬤</div><div>Record while Track 2 Plays</div></button>
-    <button class="play-all"><div>▶</div><div>All Tracks</div></button>
-    <button class='swap-tracks'><div><b>🠕🠗</b></div><div>swap tracks</div></button>
-    <button class='make-song'><div>✔</div><div>It's a song!</div></button>
-    <section class='track-2' class='loaded-track'><div><audio src=""></audio></div><div><p></p></div></section>
-  </header>
-
-<section>
-  <nav>
-      <h1>See Other Tracks</h1>
-    <ul id="list-of-tracks">
-
-    </ul>
-  </nav>
-  
-  <article>
-    <h1>See Other Songs</h1>
     
-  </article>
-</section>
-
-<footer>
-  <p>Made by cool peeps</p>
-</footer>
-<!-- sourcing the recordingSesh here so I don't have to worry about the domcontentloaded event -->
-<script src = "recordingSesh.js"></script>
-<script src = "playSesh.js"></script>
-</body>
+    <footer>
+      <p>Made by cool peeps</p>
+    </footer>
+    <!-- sourcing the recordingSesh here so I don't have to worry about the domcontentloaded event -->
+    <script src = "makeSongs.js"></script>
+    <script src = "playSesh.js"></script>
+    <script src = "recordingSesh.js"></script>
+  </body>
 </html>
 
 <!-- saw this stuff commented out, keeping this here till I'm sure we don't need it
