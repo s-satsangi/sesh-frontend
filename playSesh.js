@@ -3,7 +3,7 @@ function playAll(){
     // debugger
       
     track1audio().play()
-      
+
     track2audio().play()
 }
       
