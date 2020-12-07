@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     const recordWithTrack1 = document.querySelector('.record-with-track-1')
     recordWithTrack1.addEventListener('click', () => {
+        // console.log("I got clicked")
         recAndPlayTrack(track1audio)
     })
     const recordWithTrack2 = document.querySelector('.record-with-track-2')
@@ -115,5 +116,3 @@ function renderSong(song){
     songTable.appendChild(newSong)
     // debugger
 }
-
-

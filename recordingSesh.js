@@ -31,6 +31,7 @@ if (navigator.mediaDevices.getUserMedia) {
 
         //everything that happens when you press start sesh goes here
         record.addEventListener('click', () => {
+            console.log("ouch")
             mediaRecorder.start()
 
             //disable the record button, enable the stop button
