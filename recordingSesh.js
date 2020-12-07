@@ -8,7 +8,6 @@ const recordingDeck = document.querySelector('.recording-deck')
 const canvas = document.querySelector('.visualizer')
 const record = document.querySelector('.record')
 const stop = document.querySelector('.stop')
-
 //we wanna have stop unclickable till we start recording
 stop.disabled = 'true'
 
