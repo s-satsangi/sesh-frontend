@@ -1,10 +1,23 @@
 //stuff we're gonna need globally
 const newURL = 'http://localhost:3000/tracks'
+let track1 = () => document.querySelector('.track-1')
+let track2 = () => document.querySelector('.track-2')
+let track1audio = () => track1().childNodes[0].childNodes[0]
+let track2audio = () => track2().childNodes[0].childNodes[0]
 
 //when we first load the page:
 document.addEventListener('DOMContentLoaded', () => {
     getTracks()
+    const swapButton = document.querySelector('.swap-tracks')
+    swapButton.addEventListener('click',() => {
+          swapTracks()
+    })
+    const playAllButton = document.querySelector('.play-all')
+    playAllButton.addEventListener('click', ()=>{
+        playAll()
+    })
 })
+
 
 //get all recorded tracks on server
 function getTracks(){
@@ -40,17 +53,17 @@ trackTable.append(newTrack)
 function clearHeaderContent() { 
     // debugger
     // document.getElementsByClassName('track-1').innerHTML = ""; 
-    document.getElementsByClassName('track-1')[0].childNodes[0].src=""
+    document.getElementsByClassName('track-1')[0].childNodes[0].childNodes[0].src=""
 
-    document.getElementsByClassName('track-1')[0].childNodes[1].value=""
+    document.getElementsByClassName('track-1')[0].childNodes[1].childNodes[0].value=""
 }
 
 //currently, when track is clicked in the list, renders it in track-1
 function trackIsClicked(event, track){
     console.log(track.id)
     let clickedTrackArea=document.getElementsByClassName('track-1')
-    let clickedTrackTitleTag= clickedTrackArea[0].childNodes[1]
-    let clickedTrackAudio = clickedTrackArea[0].childNodes[0]
+    let clickedTrackTitleTag= clickedTrackArea[0].childNodes[1].childNodes[0]
+    let clickedTrackAudio = clickedTrackArea[0].childNodes[0].childNodes[0]
     clickedTrackAudio.src = track.bucket_link["url"]
     clickedTrackAudio.controls = true
     clickedTrackTitleTag.id = track.id 
@@ -67,4 +80,27 @@ function trackIsClicked(event, track){
     // trackFrame.delete
 
 
+// code for the sesh deck.  Everything apart from the recording stuff is in here
+
+
+    
+function playAll(){
+    console.log('Play All')
+    // debugger
+      
+    track1audio.play()
+      
+    track2audio.play()
+}
+      
+function swapTracks(){
+            // debugger
+            //set what's in track-1 to swap vars
+    let swap = track1().innerHTML
+            //set track-1 to track-2
+    track1().innerHTML = track2().innerHTML
+            //set track-2 to what's in the swap vars
+    track2().innerHTML = swap
+}
+        
 
