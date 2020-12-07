@@ -16,4 +16,13 @@ function swapTracks(){
             //set track-2 to what's in the swap vars
     track2().innerHTML = swap
 }
-        
+
+function recAndPlayTrack(trackAudio){
+    console.log("I have a wanna to record some audio and play " + trackAudio)
+    let record = document.querySelector('.record')
+    // let hello = async () => { return "Hello" };
+    let pressRecord = async () => {record.click()}
+    // record.click()
+    // trackAudio().play()
+    pressRecord().then(trackAudio().play())
+}

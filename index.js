@@ -1,12 +1,14 @@
 //stuff we're gonna need globally
 const newURL = 'http://localhost:3000/tracks'
 const songsURL = 'http://localhost:3000/songs'
+
 let track1 = () => document.querySelector('.track-1')
 let track2 = () => document.querySelector('.track-2')
 let track1audio = () => track1().childNodes[0].childNodes[0]
 let track2audio = () => track2().childNodes[0].childNodes[0]
 let track1pTag = () => track1().childNodes[1].childNodes[0]
 let track2pTag = () => track2().childNodes[1].childNodes[0]
+
 
 //when we first load the page:
 document.addEventListener('DOMContentLoaded', () => {
@@ -24,6 +26,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const makeSong = document.querySelector('.make-song')
     makeSong.addEventListener('click', () => {
         makeSongs()
+    })
+    const recordWithTrack1 = document.querySelector('.record-with-track-1')
+    recordWithTrack1.addEventListener('click', () => {
+        recAndPlayTrack(track1audio)
+    })
+    const recordWithTrack2 = document.querySelector('.record-with-track-2')
+    recordWithTrack2.addEventListener('click', () => {
+        recAndPlayTrack(track2audio)
     })
 })
 
