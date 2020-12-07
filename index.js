@@ -53,17 +53,19 @@ trackTable.append(newTrack)
 function clearHeaderContent() { 
     // debugger
     // document.getElementsByClassName('track-1').innerHTML = ""; 
+    // clear track 1 audio tag
     document.getElementsByClassName('track-1')[0].childNodes[0].childNodes[0].src=""
-
+    // clear track 1 p tag
     document.getElementsByClassName('track-1')[0].childNodes[1].childNodes[0].value=""
 }
 
 //currently, when track is clicked in the list, renders it in track-1
 function trackIsClicked(event, track){
     console.log(track.id)
-    let clickedTrackArea=document.getElementsByClassName('track-1')
-    let clickedTrackTitleTag= clickedTrackArea[0].childNodes[1].childNodes[0]
+    let clickedTrackArea = document.getElementsByClassName('track-1')
+    let clickedTrackTitleTag = clickedTrackArea[0].childNodes[1].childNodes[0]
     let clickedTrackAudio = clickedTrackArea[0].childNodes[0].childNodes[0]
+    
     clickedTrackAudio.src = track.bucket_link["url"]
     clickedTrackAudio.controls = true
     clickedTrackTitleTag.id = track.id 
@@ -80,27 +82,4 @@ function trackIsClicked(event, track){
     // trackFrame.delete
 
 
-// code for the sesh deck.  Everything apart from the recording stuff is in here
-
-
-    
-function playAll(){
-    console.log('Play All')
-    // debugger
-      
-    track1audio.play()
-      
-    track2audio.play()
-}
-      
-function swapTracks(){
-            // debugger
-            //set what's in track-1 to swap vars
-    let swap = track1().innerHTML
-            //set track-1 to track-2
-    track1().innerHTML = track2().innerHTML
-            //set track-2 to what's in the swap vars
-    track2().innerHTML = swap
-}
-        
 
