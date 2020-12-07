@@ -22,8 +22,14 @@
       <button class='stop'>Stop Sesh</button>
     </div>
 
-    <section class='track-1' class='loaded-track'><audio src=""></audio><p></p></section>
-    <section class='track-2' class='loaded-track'></section>
+    <section class='track-1' class='loaded-track' style = 'block'><div><audio src=""></audio></div><div><p></p></div></section>
+    <button class="record"><div>⬤</div><div>Record</div></button>
+    <button class="record-with-track-1"><div>⬤/▶</div><div>Record while Track 1 Plays</div></button>
+    <button class="record-with-track-2"><div>▶/⬤</div><div>Record while Track 2 Plays</div></button>
+    <button class="play-all"><div>▶</div><div>All Tracks</div></button>
+    <button class='swap-tracks'><div><b>🠕🠗</b></div><div>swap tracks</div></button>
+    <button class='make-song'><div>✔</div><div>It's a song!</div></button>
+    <section class='track-2' class='loaded-track'><div><audio src=""></audio></div><div><p></p></div></section>
   </header>
 
 <section>
@@ -45,6 +51,7 @@
 </footer>
 <!-- sourcing the recordingSesh here so I don't have to worry about the domcontentloaded event -->
 <script src = "recordingSesh.js"></script>
+<script src = "playSesh.js"></script>
 </body>
 </html>
 

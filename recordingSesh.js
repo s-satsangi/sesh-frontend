@@ -1,3 +1,4 @@
+
 // Hey hey it's our code to record stuff!
 // thanks in huge part to https://github.com/mdn/web-dictaphone
 
@@ -67,7 +68,7 @@ if (navigator.mediaDevices.getUserMedia) {
             postObj.method = "POST"
             postObj.body = formData
             //newURL is from index.js
-            fetch(`${newURL}`, postObj)
+            fetch(`${newURL}`, postObj).then(resp=>resp.json()).then(track=>renderTrack(track))
         })
 
         mediaRecorder.addEventListener('dataavailable', stream => {
@@ -142,11 +143,10 @@ function visualize(stream) {
       canvasContext.stroke();
   
     }
-  }
+}
   
-  window.onresize = function() {
-    canvas.width = recordingDeck.offsetWidth;
-  }
-  
-  window.onresize();
-  
+        window.onresize = function() {
+          canvas.width = recordingDeck.offsetWidth;
+        }
+          
+        window.onresize();
