@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+/*Style the logo*/
+#logo {
+  height: 50px;
+}
+
 body {
   /* overflow: hidden; */
   font-family: Arial, Helvetica, sans-serif;
@@ -43,14 +48,23 @@ button {
 nav {
   height: 100%;
   font-family: 'Syne Mono', monospace;
-  /* -webkit-flex: 3;
-  -ms-flex: 3; */
-  /* flex: 3; */
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
   background: #ccc;
   padding: 20px;
   overflow: auto;
   
 }
+
+.track-1 p{
+  font-size: 18px;
+}
+
+.track-2 p{
+  font-size: 18px;
+}
+
 
 .tracks-header {
   font-size: 30px;
@@ -69,12 +83,14 @@ nav ul :hover{
 
 /* Style the content */
 article {
+  height: 100%;
   font-family: 'Syne Mono', monospace;
   -webkit-flex: 3;
   -ms-flex: 3;
   flex: 3;
   background-color: #f1f1f1;
-  padding: 10px;
+  padding: 20px;
+  overflow: auto;
 }
 
 .songs-header {
