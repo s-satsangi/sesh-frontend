@@ -1,10 +1,8 @@
-
-
 * {
   box-sizing: border-box;
 }
 
-/*Style the logo*/
+/*Style the  logo*/
 #logo {
   height: 50px;
 }
@@ -28,43 +26,41 @@ button {
   font-family: monospace;
   font-size: 15px;
 }
-.button :hover{
+.button :hover {
   color: #6e46db;
 }
-.controls{
-  font-family: 'Syne Mono', monospace;
+.controls {
+  font-family: "Syne Mono", monospace;
   font-size: 20px;
   padding: 10px;
 }
 /* Container for flexboxes */
 .song-track-section {
   /* position: fixed; */
-  height: 350px;   
+  height: 350px;
   display: -webkit-flex;
-  width: 100%; 
+  width: 100%;
 }
 
 /* Style the navigation menu */
 nav {
   height: 100%;
-  font-family: 'Syne Mono', monospace;
+  font-family: "Syne Mono", monospace;
   -webkit-flex: 3;
   -ms-flex: 3;
   flex: 3;
   background: #ccc;
   padding: 20px;
   overflow: auto;
-  
 }
 
-.track-1 p{
+.track-1 p {
   font-size: 18px;
 }
 
-.track-2 p{
+.track-2 p {
   font-size: 18px;
 }
-
 
 .tracks-header {
   font-size: 30px;
@@ -77,14 +73,14 @@ nav ul {
   /* overflow-y:auto; */
 }
 
-nav ul :hover{
+nav ul :hover {
   color: #6e46db;
 }
 
 /* Style the content */
 article {
   height: 100%;
-  font-family: 'Syne Mono', monospace;
+  font-family: "Syne Mono", monospace;
   -webkit-flex: 3;
   -ms-flex: 3;
   flex: 3;
@@ -99,18 +95,20 @@ article {
 
 /* Style the footer */
 footer {
-  font-family: 'Syne Mono', monospace;
+  font-family: "Syne Mono", monospace;
   position: fixed;
   font-size: 10px;
   left: 0;
   bottom: 0;
   width: 100%;
-  background-image: repeating-linear-gradient(-45deg, 
-      yellow 0 20px, 
-      black 20px 40px);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    yellow 0 20px,
+    black 20px 40px
+  );
   padding: 0px;
   text-align: center;
-  color:#6e46db;
+  color: #6e46db;
 }
 /* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
 @media (max-width: 600px) {
@@ -119,4 +117,3 @@ footer {
     flex-direction: column;
   }
 }
-
